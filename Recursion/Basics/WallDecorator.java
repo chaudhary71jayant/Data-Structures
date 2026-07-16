@@ -15,20 +15,29 @@ Output:
 An integer representing the total number of ways to fill the wall.
  */
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 public class WallDecorator {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int n = sc.nextInt();
-
-        System.out.println(ways(n));
-
+        
+        int[] dp = new int[n+1];
+        Arrays.fill(dp, -1);
+        System.out.println(ways(n, dp));
+        sc.close();
     }
 
-    public static int ways(int n){
+    public static int ways(int n,int[] dp){
         if(n == 0 || n ==1 ) return 1;
 
-        return ways(n-1) + ways(n-2);
+        if(dp[n] != -1) return dp[n];
+
+        dp[n] = ways(n-1,dp)+ways(n-2,dp);
+
+        return dp[n];
+
+        
     }
 }
