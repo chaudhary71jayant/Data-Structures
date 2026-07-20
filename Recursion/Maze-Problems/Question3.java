@@ -11,12 +11,12 @@ public class Question3 {
         //base condtion
         if(r == 1 && c ==1) return 1;
         
-        int ways = 0;
+        int right=0,down=0,diagonal=0;
 
-        if(r > 1) ways += numberOfWays(r-1, c);
-        if(c > 1) ways += numberOfWays(r, c-1);
-        if(r>1 && c >1) ways += numberOfWays(r-1, c-1);
+        if(r > 1) down += numberOfWays(r-1, c);
+        if(c > 1) right  += numberOfWays(r, c-1);
+        if(r>1 && c >1) diagonal = numberOfWays(r-1, c-1);
 
-        return ways;
+        return right+down+diagonal;
     }
 }
