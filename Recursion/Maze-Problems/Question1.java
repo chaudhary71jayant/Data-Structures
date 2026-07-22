@@ -10,9 +10,9 @@ public class Question1 {
             return 1;
         }
 
-        int left = count(r-1,c);
+        int down = count(r-1,c);
         int right = count(r,c-1);
 
-        return left+right;
+        return down+right;
     }
 }
