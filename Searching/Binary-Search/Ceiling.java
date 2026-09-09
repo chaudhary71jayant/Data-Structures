@@ -2,12 +2,12 @@
 
 public class Ceiling {
     public static void main(String[] args) {
-        int[] arr = {1,2,3,6,8,14,16,18};
-        int target = 15;
+        int[] arr = {0,0,0,0,0,0,0,0};
+        int target = 0;
 
         int result = CeilingNum(arr, target);
 
-        System.out.print("The ceiling of the number" + target + "is  : "+ arr[result]);
+        System.out.print("The ceiling of the number" + target + "is  : "+ result);
     }
 
     static int CeilingNum(int[] arr,int target) {
